@@ -10,20 +10,25 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
     background:#f5f5f5;
+    color:#333;
 }
 
+/* Header */
 header{
     background:#111;
     color:white;
-    padding:15px 50px;
+    padding:15px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
@@ -35,51 +40,77 @@ nav a{
     color:white;
     text-decoration:none;
     margin-left:20px;
+    transition:0.3s;
 }
 
+nav a:hover{
+    color:#06b6d4;
+}
+
+/* Hero */
 .hero{
-    height:450px;
-    background:linear-gradient(to right,#4f46e5,#06b6d4);
+    height:500px;
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
     color:white;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
+    padding:20px;
 }
 
 .hero h1{
-    font-size:52px;
-    margin-bottom:15px;
+    font-size:60px;
+    margin-bottom:20px;
 }
 
 .hero p{
-    font-size:20px;
-    margin-bottom:20px;
+    font-size:22px;
+    margin-bottom:30px;
 }
 
 .btn{
     background:white;
     color:#111;
-    padding:12px 25px;
-    border-radius:6px;
+    padding:14px 28px;
+    border-radius:8px;
     text-decoration:none;
     font-weight:bold;
 }
 
+/* Section */
 .section-title{
     text-align:center;
-    margin:50px 0 20px;
-    font-size:34px;
+    font-size:36px;
+    margin:60px 0 30px;
 }
 
+/* Categories */
+.categories{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.category{
+    background:white;
+    padding:40px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+/* Products */
 .products{
     width:90%;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:25px;
-    margin-bottom:60px;
+    margin-bottom:50px;
 }
 
 .card{
@@ -87,6 +118,11 @@ nav a{
     border-radius:12px;
     overflow:hidden;
     box-shadow:0 4px 12px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card img{
@@ -120,11 +156,47 @@ nav a{
     cursor:pointer;
 }
 
+/* About */
+.about{
+    width:80%;
+    margin:50px auto;
+    text-align:center;
+    line-height:1.8;
+}
+
+/* Contact */
+.contact{
+    width:80%;
+    margin:auto;
+    text-align:center;
+    padding-bottom:50px;
+}
+
+.contact p{
+    margin:10px 0;
+}
+
+/* Footer */
 footer{
     background:#111;
     color:white;
     text-align:center;
     padding:20px;
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+}
+
+nav{
+    margin-top:10px;
+}
+
+.hero h1{
+    font-size:40px;
+}
 }
 </style>
 </head>
@@ -135,63 +207,93 @@ footer{
     <div class="logo">ShopEasy</div>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Categories</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+        <a href="products.html">Products</a>
+        <a href="#categories">Categories</a>
+        <a href="#contact">Contact</a>
     </nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
     <h1>Big Sale 2026</h1>
-    <p>Latest Electronics & Accessories at Best Prices</p>
-    <a href="#products" class="btn">Shop Now</a>
+    <p>Latest Electronics, Fashion & Accessories at Best Prices</p>
+    <a href="products.html" class="btn">Shop Now</a>
 </section>
 
-<h2 class="section-title" id="products">Featured Products</h2>
+<h2 class="section-title" id="categories">Categories</h2>
+
+<section class="categories">
+    <div class="category">📱 Mobiles</div>
+    <div class="category">🎧 Audio</div>
+    <div class="category">⌚ Smart Watches</div>
+    <div class="category">👟 Fashion</div>
+</section>
+
+<h2 class="section-title">
+    <a href="products.html" style="text-decoration:none;color:#111;">
+        Featured Products
+    </a>
+</h2>
 
 <section class="products">
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800" alt="">
-        <div class="card-body">
-            <h3>Smartphone Pro</h3>
-            <div class="price">₹29,999</div>
-            <button class="buy-btn">Add To Cart</button>
-        </div>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
+<div class="card-body">
+<h3>Smartphone Pro</h3>
+<div class="price">₹29,999</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800" alt="">
-        <div class="card-body">
-            <h3>Wireless Headphones</h3>
-            <div class="price">₹3,999</div>
-            <button class="buy-btn">Add To Cart</button>
-        </div>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800">
+<div class="card-body">
+<h3>Wireless Headphones</h3>
+<div class="price">₹3,999</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800" alt="">
-        <div class="card-body">
-            <h3>Smart Watch</h3>
-            <div class="price">₹5,999</div>
-            <button class="buy-btn">Add To Cart</button>
-        </div>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800">
+<div class="card-body">
+<h3>Smart Watch</h3>
+<div class="price">₹5,999</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800" alt="">
-        <div class="card-body">
-            <h3>Running Shoes</h3>
-            <div class="price">₹2,499</div>
-            <button class="buy-btn">Add To Cart</button>
-        </div>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800">
+<div class="card-body">
+<h3>Running Shoes</h3>
+<div class="price">₹2,499</div>
+<button class="buy-btn">Add To Cart</button>
+</div>
+</div>
 
 </section>
 
+<h2 class="section-title">About Us</h2>
+
+<section class="about">
+<p>
+ShopEasy is a demo eCommerce website built using HTML and CSS.
+We provide the latest electronics, fashion items, and accessories at affordable prices.
+</p>
+</section>
+
+<h2 class="section-title" id="contact">Contact Us</h2>
+
+<section class="contact">
+<p>Email: support@shopeasy.com</p>
+<p>Phone: +91 9876543210</p>
+<p>Address: Kanpur, Uttar Pradesh, India</p>
+</section>
+
 <footer>
-    © 2026 ShopEasy. All Rights Reserved.
+© 2026 ShopEasy. All Rights Reserved.
 </footer>
 
 </body>
