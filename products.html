@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Featured Products - ShopEasy</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+header{
+    background:#111;
+    color:white;
+    padding:15px 50px;
+}
+
+header a{
+    color:white;
+    text-decoration:none;
+}
+
+.page-title{
+    text-align:center;
+    margin:40px 0;
+    font-size:40px;
+}
+
+.products{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    padding-bottom:50px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:15px;
+}
+
+.price{
+    color:#4f46e5;
+    font-size:22px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.buy-btn{
+    width:100%;
+    background:#4f46e5;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html">← Back to Home</a>
+</header>
+
+<h1 class="page-title">Featured Products</h1>
+
+<section class="products">
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800">
+    <div class="card-body">
+        <h3>iPhone 16 Pro</h3>
+        <div class="price">₹1,19,999</div>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800">
+    <div class="card-body">
+        <h3>Sony WH-1000XM5</h3>
+        <div class="price">₹24,999</div>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800">
+    <div class="card-body">
+        <h3>Galaxy Watch</h3>
+        <div class="price">₹18,999</div>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800">
+    <div class="card-body">
+        <h3>Nike Running Shoes</h3>
+        <div class="price">₹5,999</div>
+        <button class="buy-btn">Buy Now</button>
+    </div>
+</div>
+
+</section>
+
+</body>
+</html>
